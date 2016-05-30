@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Robin</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/robin.css"  media="screen,projection"/>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+</head>
+<body ng-app="robin">
+  <nav class="purple darken-4 navig">
+    <div class="nav-wrapper">
+      <a href="#/" class="brand-logo">Robin</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#/">Home</a></li>
+        <li><a href="#/calculator">Calculator</a></li>
+        <li><a href="https://github.com/jchavezjs/robin">Github</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="#/">Home</a></li>
+        <li><a href="#/calculator">Calculator</a></li>
+        <li><a href="https://github.com/jchavezjs/robin">Github</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="main-title">
+    <h1>Robin Calculator</h1>
+    <h4>Una forma sencilla para el cálculo de momentos para vectores en el espacio</h4>
+    <div class="clickable">
+      <a href="#" class="btn-git">Home</a>
+      <a href="#" class="btn-git">Calculator</a>
+      <a href="#" class="btn-git">Github</a>
+    </div>
+  </div>
+  <div class="row" ng-controller="MainController">
+     <div class="col s12">
+       <ul class="tabs">
+         <li class="tab col s3"><a class="active" href="#test1">A un punto</a></li>
+         <li class="tab col s3"><a href="#test2">A un eje</a></li>
+         <li class="tab col s3"><a href="#test3">Cupla</a></li>
+         <li class="tab col s3"><a href="#test4">Vectores</a></li>
+       </ul>
+     </div>
+     <div id="test1" class="col s12">
+       <div class="information center">
+         <h5>Cálculo de momento con respecto a un punto</h5>
+       </div>
+       <div>
+         <div><h7 class="left">Vector</h7></div>
+         <form class="col s12">
+            <div class="row">
+              <div class="input-field col s4">
+                <input placeholder="Componente i"  type="text" ng-model="comp1i" class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Componente j" type="text" ng-model="comp1j"  class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Componente k" type="text" ng-model="comp1k"  class="validate">
+              </div>
+            </div>
+         </form>
+         <div><h7 class="left">Punto donde pasa el vector</h7></div>
+         <form class="col s12">
+            <div class="row">
+              <div class="input-field col s4">
+                <input placeholder="Coordernada en x"  type="text" ng-model="cor1x1"class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Coordernada en y" type="text"  ng-model="cor1y1"class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Coordernada en k" type="text"  ng-model="cor1z1"class="validate">
+              </div>
+            </div>
+         </form>
+         <div><h7 class="left">Punto para calcular</h7></div>
+         <form class="col s12">
+            <div class="row">
+              <div class="input-field col s4">
+                <input placeholder="Coordernada en x"  type="text" ng-model="cor1x2"class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Coordernada en y" type="text"  ng-model="cor1y2"class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Coordernada en k" type="text"  ng-model="cor1z2"class="validate">
+              </div>
+            </div>
+         </form>
+       </div>
+       <a class="waves-effect waves-light btn" ng-click="momento1(comp1i,comp1j,comp1k,cor1x1,cor1y1,cor1z1,cor1x2,cor1y2,cor1z2)"><i class="material-icons left">done</i>Calcular</a>
+       {{momentoResultado1}}
+     </div>
+     <div id="test2" class="col s12">
+       <div class="information center">
+         <h5>Cálculo de momento con respecto a un eje</h5>
+       </div>
+       <div>
+         <div><h7 class="left">Vector</h7></div>
+         <form class="col s12">
+            <div class="row">
+              <div class="input-field col s4">
+                <input placeholder="Componente i"  type="text" ng-model="comp2i1" class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Componente j" type="text" ng-model="comp2j1"  class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Componente k" type="text" ng-model="comp2k1"  class="validate">
+              </div>
+            </div>
+         </form>
+         <div><h7 class="left">Punto donde pasa el vector</h7></div>
+         <form class="col s12">
+            <div class="row">
+              <div class="input-field col s4">
+                <input placeholder="Coordernada en x"  type="text" ng-model="cor2x1"class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Coordernada en y" type="text"  ng-model="cor2y1"class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Coordernada en z" type="text"  ng-model="cor2z1"class="validate">
+              </div>
+            </div>
+         </form>
+         <div><h7 class="left">Eje</h7></div>
+         <form class="col s12">
+            <div class="row">
+              <div class="input-field col s4">
+                <input placeholder="Componente en i"  type="text" ng-model="comp2i2"class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Componente en j" type="text"  ng-model="comp2j2"class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Componente en k" type="text"  ng-model="comp2k2"class="validate">
+              </div>
+            </div>
+         </form>
+         <div><h7 class="left">Punto por donde pasa el ejer</h7></div>
+         <form class="col s12">
+            <div class="row">
+              <div class="input-field col s4">
+                <input placeholder="Coordernada en x"  type="text" ng-model="cor2x2"class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Coordernada en y" type="text"  ng-model="cor2y2"class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Coordernada en z" type="text"  ng-model="cor2z2"class="validate">
+              </div>
+            </div>
+         </form>
+       </div>
+       <a class="waves-effect waves-light btn" ng-click="momento2(comp2i1,comp2j1,comp2k1,comp2i2,comp2j2,comp2k2,cor2x1,cor2y1,cor2z1,cor2x2,cor2y2,cor2z2)"><i class="material-icons left">done</i>Calcular</a>
+       {{momentoResultado2}}
+     </div>
+     <div id="test3" class="col s12">
+       <div class="information center">
+         <h5>Cálculo de momento con respecto a un punto</h5>
+       </div>
+       <div>
+         <div><h7 class="left">Vector</h7></div>
+         <form class="col s12">
+            <div class="row">
+              <div class="input-field col s4">
+                <input placeholder="Componente i"  type="text" ng-model="comp3i1" class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Componente j" type="text" ng-model="comp3j1"  class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Componente k" type="text" ng-model="comp3k1"  class="validate">
+              </div>
+            </div>
+         </form>
+         <div><h7 class="left">Vector de posición entre ambos vectores</h7></div>
+         <form class="col s12">
+            <div class="row">
+              <div class="input-field col s4">
+                <input placeholder="Componente i"  type="text" ng-model="comp3i2"class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Componente j" type="text"  ng-model="comp3j2"class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Componente k" type="text"  ng-model="comp3k2"class="validate">
+              </div>
+            </div>
+         </form>
+         <a class="waves-effect waves-light btn" ng-click="momento3(comp3i1,comp3j1,comp3k1,comp3i2,comp3j2,comp3k2)"><i class="material-icons left">done</i>Calcular</a>
+         {{momentoResultado3}}
+     </div>
+     <div id="test4" class="col s12">
+       <div class="information center">
+         <h5>Cálculo de un vector</h5>
+       </div>
+       <div>
+         <div><h7 class="left">Magnitud</h7></div>
+         <form class="col s12">
+            <div class="row">
+              <div class="input-field col s4">
+                <input placeholder="Magnitud"  type="text" ng-model="mag" class="validate">
+              </div>
+            </div>
+         </form>
+         <div><h7 class="left">Coordenadas (punto incial)</h7></div>
+         <form class="col s12">
+            <div class="row">
+              <div class="input-field col s4">
+                <input placeholder="Componente i"  type="text" ng-model="cor4x1" class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Componente j" type="text" ng-model="cor4y1"  class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Componente k" type="text" ng-model="cor4z1"  class="validate">
+              </div>
+            </div>
+         </form>
+         <div>
+           <h7 class="left">Coordenadas(punto final)</h7></div>
+         <form class="col s12">
+            <div class="row">
+              <div class="input-field col s4">
+                <input placeholder="Coordernada en x"  type="text" ng-model="cor4x2"class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Coordernada en y" type="text"  ng-model="cor4y2"class="validate">
+              </div>
+              <div class="input-field col s4">
+                <input placeholder="Coordernada en k" type="text"  ng-model="cor4z2"class="validate">
+              </div>
+            </div>
+         </form>
+       </div>
+       <a class="waves-effect waves-light btn" ng-click="vector(mag,cor4x1,cor4y1,cor4z1,cor4x2,cor4y2,cor4z2)"><i class="material-icons left">done</i>Calcular</a>
+       <!-- ng-click="vector(mag,cor4x1,cor4y1,cor4z1,cor4x2,cor4y2,cor4z2) -->
+       {{vectorResultado}}
+     </div>
+   </div>
+  <script>
+    $( document ).ready(function(){
+      $(".button-collapse").sideNav();
+    })
+  </script>
+</body>
+</html>
