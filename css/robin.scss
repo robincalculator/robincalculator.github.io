@@ -1,0 +1,41 @@
+@import 'materialize.scss';
+
+body{
+  background-color: #eee;
+}
+
+.navig{
+  z-index: 10;
+}
+.main-title{
+  background-image: url("https://pixabay.com/static/uploads/photo/2015/02/02/11/09/office-620822_960_720.jpg");
+  background-size: cover;
+  height: 100vh !important;
+  color: #fff;
+  text-align: center;
+  padding-top: 30vh;
+  h1{
+    font-size:40px;
+  }
+  h4{
+    font-size: 25px;
+  }
+  .btn-git{
+    display: inline-block;
+    padding: 10px 26px;
+    margin-right: 20px;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    opacity:0.4;
+    color:#fff;
+  }
+  .btn-git:hover{
+    opacity: 1;
+  }
+}
+::-webkit-input-placeholder{ /* WebKit browsers */
+     opacity: 0.9 !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+    opacity: 0.9 !important;
+}
