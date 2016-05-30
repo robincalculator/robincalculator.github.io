@@ -63,9 +63,9 @@ angular.module('robin',['robin.controllers'])
       if(isNaN(x1) || isNaN(y1) || isNaN(z1) || isNaN(x2) || isNaN(y2) || isNaN(z2)){
         alert("Solo ingrese numeros");
       }else{
-        var compx = (y2*z1)-(z2*y1));
-        var compy = -(x2*z1)-(z2*x1));
-        var compz = (x2*y1)-(y2*x1));
+        var compx = (y2*z1)-(z2*y1);
+        var compy = -(x2*z1)-(z2*x1);
+        var compz = (x2*y1)-(y2*x1);
         $scope.momentoResultado3 = signo(compx) + compx + " i " + signo(compy) + compy + " j " + signo(compz) + compz + " k ";
       }
     }
