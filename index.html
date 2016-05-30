@@ -18,14 +18,14 @@
       <a href="#/" class="brand-logo">Robin</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Home</a></li>
-        <li><a href="#calculator">Calculator</a></li>
+        <li><a href="#/">Home</a></li>
+        <li><a href="#/calculator">Calculator</a></li>
         <li><a href="https://github.com/jchavezjs/robin">Github</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="#/">Home</a></li>
-        <li><a href="#calculator">Calculator</a></li>
-        <li><a href="https://github.com/robincalculator/robincalculator.github.io">Github</a></li>
+        <li><a href="#/calculator">Calculator</a></li>
+        <li><a href="https://github.com/jchavezjs/robin">Github</a></li>
       </ul>
     </div>
   </nav>
@@ -34,11 +34,11 @@
     <h4>Una forma sencilla para el cálculo de momentos para vectores en el espacio</h4>
     <div class="clickable">
       <a href="#" class="btn-git">Home</a>
-      <a href="#calculator" class="btn-git">Calculator</a>
-      <a href="https://github.com/robincalculator/robincalculator.github.io" class="btn-git">Github</a>
+      <a href="#" class="btn-git">Calculator</a>
+      <a href="#" class="btn-git">Github</a>
     </div>
   </div>
-  <div id="calculator" class="row" ng-controller="MainController">
+  <div class="row" ng-controller="MainController">
      <div class="col s12">
        <ul class="tabs">
          <li class="tab col s3"><a class="active" href="#test1">A un punto</a></li>
@@ -94,9 +94,9 @@
               </div>
             </div>
          </form>
+         <a class="waves-effect waves-light btn left" ng-click="momento1(comp1i,comp1j,comp1k,cor1x1,cor1y1,cor1z1,cor1x2,cor1y2,cor1z2)"><i class="material-icons left">done</i>Calcular</a>
+         {{momentoResultado1}}
        </div>
-       <a class="waves-effect waves-light btn" ng-click="momento1(comp1i,comp1j,comp1k,cor1x1,cor1y1,cor1z1,cor1x2,cor1y2,cor1z2)"><i class="material-icons left">done</i>Calcular</a>
-       {{momentoResultado1}}
      </div>
      <div id="test2" class="col s12">
        <div class="information center">
@@ -159,9 +159,9 @@
               </div>
             </div>
          </form>
+         <a class="waves-effect waves-light btn left" ng-click="momento2(comp2i1,comp2j1,comp2k1,comp2i2,comp2j2,comp2k2,cor2x1,cor2y1,cor2z1,cor2x2,cor2y2,cor2z2)"><i class="material-icons left">done</i>Calcular</a>
+         {{momentoResultado2}}
        </div>
-       <a class="waves-effect waves-light btn" ng-click="momento2(comp2i1,comp2j1,comp2k1,comp2i2,comp2j2,comp2k2,cor2x1,cor2y1,cor2z1,cor2x2,cor2y2,cor2z2)"><i class="material-icons left">done</i>Calcular</a>
-       {{momentoResultado2}}
      </div>
      <div id="test3" class="col s12">
        <div class="information center">
@@ -241,10 +241,10 @@
               </div>
             </div>
          </form>
+         <a class="waves-effect waves-light btn left" ng-click="vector(mag,cor4x1,cor4y1,cor4z1,cor4x2,cor4y2,cor4z2)"><i class="material-icons left">done</i>Calcular</a>
+         <!-- ng-click="vector(mag,cor4x1,cor4y1,cor4z1,cor4x2,cor4y2,cor4z2) -->
+         {{vectorResultado}}
        </div>
-       <a class="waves-effect waves-light btn" ng-click="vector(mag,cor4x1,cor4y1,cor4z1,cor4x2,cor4y2,cor4z2)"><i class="material-icons left">done</i>Calcular</a>
-       <!-- ng-click="vector(mag,cor4x1,cor4y1,cor4z1,cor4x2,cor4y2,cor4z2) -->
-       {{vectorResultado}}
      </div>
    </div>
   <script>
