@@ -18,7 +18,7 @@ angular.module('robin',['robin.controllers'])
         var y = cory2-cory1;
         var z= corz2-corz1;
         var sum = Math.sqrt((Math.pow(x,2))+(Math.pow(y,2))+(Math.pow(z,2)));
-        $scope.vectorResultado = signo(x) + mag*(x/sum) + " i " +signo(-y)+ mag*(-y/sum) + " j " + signo(z) + mag*(z/sum) + " k";
+        $scope.vectorResultado = signo(x) + mag*(x/sum) + " i " +signo(y)+ mag*(y/sum) + " j " + signo(z) + mag*(z/sum) + " k";
       }
     }
   }
