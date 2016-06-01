@@ -39,7 +39,16 @@
     </div>
   </div>
   <div class="row" ng-controller="MainController">
-     <div class="col s12">
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h7 class="titulo-respuesta">Respuesta:</h7>
+        <h6 class="respuesta">{{total}}</h6>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-light btn">Ok</a>
+      </div>
+    </div>
+     <div class="col s12 tabulation">
        <ul class="tabs">
          <li class="tab col s3"><a class="active" href="#test1">A un punto</a></li>
          <li class="tab col s3"><a href="#test2">A un eje</a></li>
@@ -95,8 +104,7 @@
             </div>
          </form>
          <div class="col s12">
-         <a class="waves-effect waves-light btn left" ng-click="momento1(comp1i,comp1j,comp1k,cor1x1,cor1y1,cor1z1,cor1x2,cor1y2,cor1z2)"><i class="material-icons left">done</i>Calcular</a>
-         {{momentoResultado1}}
+         <a class="waves-effect waves-light btn modal-trigger left" href="#modal1" ng-click="momento1(comp1i,comp1j,comp1k,cor1x1,cor1y1,cor1z1,cor1x2,cor1y2,cor1z2)"><i class="material-icons left">done</i>Calcular</a>
          </div>
        </div>
      </div>
@@ -162,14 +170,13 @@
             </div>
          </form>
          <div class="col s12">
-         <a class="waves-effect waves-light btn left" ng-click="momento2(comp2i1,comp2j1,comp2k1,comp2i2,comp2j2,comp2k2,cor2x1,cor2y1,cor2z1,cor2x2,cor2y2,cor2z2)"><i class="material-icons left">done</i>Calcular</a>
-         {{momentoResultado2}}
+         <a class="waves-effect waves-light btn modal-trigger left" href="#modal1" ng-click="momento2(comp2i1,comp2j1,comp2k1,comp2i2,comp2j2,comp2k2,cor2x1,cor2y1,cor2z1,cor2x2,cor2y2,cor2z2)"><i class="material-icons left">done</i>Calcular</a>
          </div>
        </div>
      </div>
      <div id="test3" class="col s12">
        <div class="information center">
-         <h5>Cálculo de momento con respecto a un punto</h5>
+         <h5>Cálculo de momento debido a un par de fuerzas</h5>
        </div>
        <div>
          <div><h7 class="left">Vector</h7></div>
@@ -201,8 +208,7 @@
             </div>
          </form>
          <div class="col s12">
-         <a class="waves-effect waves-light btn" ng-click="momento3(comp3i1,comp3j1,comp3k1,comp3i2,comp3j2,comp3k2)"><i class="material-icons left">done</i>Calcular</a>
-         {{momentoResultado3}}
+         <a class="waves-effect waves-light btn modal-trigger" href="#modal1" ng-click="momento3(comp3i1,comp3j1,comp3k1,comp3i2,comp3j2,comp3k2)"><i class="material-icons left">done</i>Calcular</a>
          </div>
      </div>
      </div>
@@ -249,9 +255,7 @@
             </div>
          </form>
          <div class="col s12">
-         <a class="waves-effect waves-light btn left" ng-click="vector(mag,cor4x1,cor4y1,cor4z1,cor4x2,cor4y2,cor4z2)"><i class="material-icons left">done</i>Calcular</a>
-         <!-- ng-click="vector(mag,cor4x1,cor4y1,cor4z1,cor4x2,cor4y2,cor4z2) -->
-         {{vectorResultado}}
+         <a class="waves-effect waves-light btn modal-trigger left" href="#modal1" ng-click="vector(mag,cor4x1,cor4y1,cor4z1,cor4x2,cor4y2,cor4z2)"><i class="material-icons left">done</i>Calcular</a>
          </div>
        </div>
      </div>
@@ -259,6 +263,7 @@
   <script>
     $( document ).ready(function(){
       $(".button-collapse").sideNav();
+       $('.modal-trigger').leanModal();
     })
   </script>
 </body>
