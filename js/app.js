@@ -1,11 +1,15 @@
 angular.module('robin',['robin.controllers'])
 .controller('MainController',function($scope){
+  $scope.total = "";
   function signo(v){
     if(v>=0){
       return "+";
     }else{
       return "";
     }
+  }
+  function asignar(val){
+    $scope.total = val;
   }
   $scope.vector = function(mag,corx1,cory1,corz1,corx2,cory2,corz2){
     if(mag == undefined || corx1 == undefined || cory1 == undefined || corz1 == undefined || corx2 == undefined || cory2 == undefined || corz2 == undefined){
@@ -19,6 +23,7 @@ angular.module('robin',['robin.controllers'])
         var z= corz2-corz1;
         var sum = Math.sqrt((Math.pow(x,2))+(Math.pow(y,2))+(Math.pow(z,2)));
         $scope.vectorResultado = signo(x) + mag*(x/sum) + " i " +signo(y)+ mag*(y/sum) + " j " + signo(z) + mag*(z/sum) + " k";
+        asignar($scope.vectorResultado);
       }
     }
   }
@@ -36,6 +41,7 @@ angular.module('robin',['robin.controllers'])
         var compy = -((px*z)-(pz*x));
         var compz = ((px*y)-(py*x));
         $scope.momentoResultado1 = signo(compx) + compx + " i " + signo(compy) + compy + " j " + signo(compz) + compz + " k ";
+        asignar($scope.momentoResultado1);
       }
     }
   }
@@ -53,6 +59,7 @@ angular.module('robin',['robin.controllers'])
         var compy = -y2*((px*z1)-(pz*x1));
         var compz = z2*((px*y1)-(py*x1));
         $scope.momentoResultado2 = compx + compy + compz;
+        asignar($scope.momentoResultado2);
       }
     }
   }
@@ -67,6 +74,7 @@ angular.module('robin',['robin.controllers'])
         var compy = -(x2*z1)-(z2*x1);
         var compz = (x2*y1)-(y2*x1);
         $scope.momentoResultado3 = signo(compx) + compx + " i " + signo(compy) + compy + " j " + signo(compz) + compz + " k ";
+        asignar($scope.momentoResultado3);
       }
     }
   }
