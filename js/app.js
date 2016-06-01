@@ -71,7 +71,7 @@ angular.module('robin',['robin.controllers'])
         alert("Solo ingrese numeros");
       }else{
         var compx = (y2*z1)-(z2*y1);
-        var compy = -(x2*z1)-(z2*x1);
+        var compy = -((x2*z1)-(z2*x1));
         var compz = (x2*y1)-(y2*x1);
         $scope.momentoResultado3 = signo(compx) + compx + " i " + signo(compy) + compy + " j " + signo(compz) + compz + " k ";
         asignar($scope.momentoResultado3);
